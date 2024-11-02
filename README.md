@@ -34,3 +34,89 @@ You can check out [the Next.js GitHub repository](https://github.com/vercel/next
 The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
 Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+
+PROJECT STRUCTURE 
+
+ROOT/
+├── src/
+│   ├── app/
+│   │   ├── (auth)/
+│   │   │   ├── login/
+│   │   │   │   └── page.tsx
+│   │   │   └── layout.tsx
+│   │   ├── (dashboard)/
+│   │   │   ├── dashboard/
+│   │   │   │   ├── loading.tsx
+│   │   │   │   └── page.tsx
+│   │   │   ├── workflows/
+│   │   │   │   ├── [id]/
+│   │   │   │   │   ├── page.tsx
+│   │   │   │   │   └── loading.tsx
+│   │   │   │   ├── create/
+│   │   │   │   │   └── page.tsx
+│   │   │   │   └── page.tsx
+│   │   │   └── layout.tsx
+│   │   ├── api/
+│   │   │   ├── auth/
+│   │   │   │   └── [...nextauth]/
+│   │   │   │       └── route.ts
+│   │   │   ├── trpc/
+│   │   │   │   └── [trpc]/
+│   │   │   │       └── route.ts
+│   │   │   └── webhooks/
+│   │   │       └── route.ts
+│   │   ├── layout.tsx
+│   │   └── page.tsx
+│   ├── components/
+│   │   ├── auth/
+│   │   │   ├── auth-button.tsx
+│   │   │   └── login-form.tsx
+│   │   ├── dashboard/
+│   │   │   ├── sidebar.tsx
+│   │   │   └── header.tsx
+│   │   ├── flow/
+│   │   │   ├── nodes/
+│   │   │   │   ├── scrape-node.tsx
+│   │   │   │   ├── transform-node.tsx
+│   │   │   │   └── output-node.tsx
+│   │   │   ├── edges/
+│   │   │   │   └── custom-edge.tsx
+│   │   │   ├── controls/
+│   │   │   │   ├── node-picker.tsx
+│   │   │   │   └── flow-controls.tsx
+│   │   │   └── flow-builder.tsx
+│   │   ├── shared/
+│   │   │   ├── button.tsx
+│   │   │   ├── input.tsx
+│   │   │   └── loading-spinner.tsx
+│   │   └── workflows/
+│   │       ├── workflow-card.tsx
+│   │       └── workflow-list.tsx
+│   ├── config/
+│   │   └── site.ts
+│   ├── lib/
+│   │   ├── auth.ts
+│   │   ├── prisma.ts
+│   │   └── trpc.ts
+│   ├── server/
+│   │   ├── api/
+│   │   │   └── routers/
+│   │   │       ├── auth.ts
+│   │   │       ├── workflow.ts
+│   │   │       └── _app.ts
+│   │   └── db/
+│   │       └── schema.ts
+│   ├── styles/
+│   │   └── globals.css
+│   ├── types/
+│   │   ├── auth.ts
+│   │   ├── flow.ts
+│   │   └── workflow.ts
+│   └── utils/
+│       ├── api.ts
+│       └── flow-utils.ts
+├── prisma/
+│   └── schema.prisma
+├── public/
+│   └── assets/
+└── package.json
